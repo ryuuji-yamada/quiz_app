@@ -33,12 +33,8 @@ public class Quiz {
     private String quiz;
 
 
-    @Column(name = "answer_s", nullable = true)
-    private String answer_s;
-
-
-    @Column(name = "answer_i", nullable = true)
-    private Integer answer_i;
+    @Column(name = "answer", nullable = false)
+    private String answer;
 
 
     public Integer getId() {
@@ -61,23 +57,13 @@ public class Quiz {
     }
 
 
-    public String getAnswer_s() {
-        return answer_s;
+    public String getAnswer() {
+        return answer;
     }
 
 
-    public void setAnswer_s(String answer_s) {
-        this.answer_s = answer_s;
-    }
-
-
-    public Integer getAnswer_i() {
-        return answer_i;
-    }
-
-
-    public void setAnswer_i(Integer answer_i) {
-        this.answer_i = answer_i;
+    public void setAnswer_s(String answer) {
+        this.answer = answer;
     }
 
 
