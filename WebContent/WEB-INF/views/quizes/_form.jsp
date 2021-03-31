@@ -10,6 +10,11 @@
 
     </div>
 </c:if>
+<label for="code">クイズ番号</label><br />
+<input type="text" name="code" value="${quiz.code}" />
+<br /><br />
+
+
 <label for="quiz">クイズ</label><br />
 <textarea name="quiz" rows="10" cols="20">${quiz.quiz}</textarea>
 <br /><br />

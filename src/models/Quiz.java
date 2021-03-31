@@ -19,7 +19,11 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getQuizesCount",
             query = "SELECT COUNT(q) FROM Quiz AS q"
-    )
+    ),
+    @NamedQuery(
+            name = "checkRegisteredCode",
+            query = "SELECT COUNT (q) FROM Quiz AS q WHERE q.code = :code"
+            )
 })
 @Entity
 public class Quiz {
@@ -27,6 +31,10 @@ public class Quiz {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+
+    @Column(name = "code", nullable = false, unique = true)
+    private String code;
 
 
     @Column(name = "quiz", length = 255, nullable = false )
@@ -47,6 +55,16 @@ public class Quiz {
     }
 
 
+    public String getCode() {
+        return code;
+    }
+
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+
     public String getQuiz() {
         return quiz;
     }
@@ -62,7 +80,7 @@ public class Quiz {
     }
 
 
-    public void setAnswer_s(String answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 

@@ -13,12 +13,12 @@
                  <tr>
                      <th>クイズ番号</th>
                      <th>クイズ</th>
-                     <th>答え</th>
+                     <th>操作</th>
                  </tr>
                  <c:forEach var="quiz" items="${quizes}" varStatus="status">
                       <tr class="row${status.count % 2}">
                           <td><c:out value="${quiz.code}" /></td>
-                          <td><c:out value="${quiz.name}" /></td>
+                          <td><c:out value="${quiz.quiz}" /></td>
                           <td><a href="<c:url value='/quizes/show?id=${quiz.id}' />">詳細を表示</a></td>
                       </tr>
                  </c:forEach>
