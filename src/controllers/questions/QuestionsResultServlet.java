@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  * Servlet implementation class QuestionsResultServlet
  */
@@ -26,22 +25,22 @@ public class QuestionsResultServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    String user_answer = (String)request.getSession().getAttribute("user_answer");
-	    String questions_answer = (String)request.getSession().getAttribute("questions_answer");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    String user_answer = request.getParameter("user_answer");
+        String questions_answer = request.getParameter("questions_answer");
 
 
-	        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/result.jsp");
-	        rd.forward(request, response);
-
-	        request.getSession().removeAttribute(user_answer);
-	        request.getSession().removeAttribute(questions_answer);
+        request.getSession().setAttribute("user_answer", user_answer);
+        request.getSession().setAttribute("questions_answer", questions_answer);
 
 
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/result.jsp");
+            rd.forward(request, response);
 
-
+            request.getSession().removeAttribute("user_answer");
+            request.getSession().removeAttribute("questions_answer");
 	}
 
 }

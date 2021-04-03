@@ -42,8 +42,6 @@ public class QuestionsServlet extends HttpServlet {
 	    em.close();
 	    request.setAttribute("questions", q);
 
-	    String user_answer = request.getParameter("user_answer");
-	    request.setAttribute("user_answer", user_answer);
 
 	    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/questions.jsp");
 	    rd.forward(request, response);

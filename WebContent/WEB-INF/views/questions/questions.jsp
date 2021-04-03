@@ -11,7 +11,7 @@
         <c:out value="${questions.quiz}" /></h2>
         <br /><br />
 
-      <form method="GET" action="<c:url value='questions/result' />">
+      <form method="POST" action="<c:url value='questions/result' />">
         <label for="user_answer">答え</label><br />
         <input type="text" name="user_answer" value="${user_answer}" />
         <br /><br />
