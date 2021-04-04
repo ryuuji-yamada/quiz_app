@@ -7,8 +7,7 @@
             <c:redirect url='/questions' />
         </c:when>
         <c:otherwise>
-        <h2>Q：<c:out value="${questions.id}" />&nbsp;
-        <c:out value="${questions.quiz}" /></h2>
+        <h2>Q：<c:out value="${questions.quiz}" /></h2>
         <br /><br />
 
       <form method="POST" action="<c:url value='questions/result' />">
@@ -21,6 +20,7 @@
         <input type="hidden" name="questions_answer" value="${questions.answer}" />
         <button type="submit">解答</button>
       </form>
+      <p>（答えは全て全角で入力してください）</p>
       </c:otherwise>
       </c:choose>
     </c:param>

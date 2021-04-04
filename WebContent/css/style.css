@@ -164,3 +164,8 @@ pre {
 h3{
 	font-size: larger;
 }
+
+#answer_result{
+	font-size:x-large;
+	font-weight:bold;
+}
