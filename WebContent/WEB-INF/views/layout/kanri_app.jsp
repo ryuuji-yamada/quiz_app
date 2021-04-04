@@ -14,7 +14,7 @@
                   <h1>クイズアプリケーション</h1>&nbsp;&nbsp;&nbsp;&nbsp;
                   <c:if test="${sessionScope.name != null && sessionScope.password != null}">
                        <div id="user">
-                           <a href="<c:url value='/logout' />">ログアウト</a>
+                           <a href="<c:url value='/quizes/logout' />">ログアウト</a>
                        </div>
                   </c:if>
              </div>

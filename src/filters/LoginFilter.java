@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter("/quizes")
+@WebFilter("/*")
 public class LoginFilter implements Filter {
 
     /**
@@ -48,11 +48,11 @@ public class LoginFilter implements Filter {
 	        String name = (String)session.getAttribute("name");
 
 
-	        if(!servlet_path.equals("/login")){
+	        if(!servlet_path.equals("/index.html") && !servlet_path.equals("/questions") && !servlet_path.equals("/questions/result") && !servlet_path.equals("/quizes/login")){
 	            //ログアウト状態であれば
 	            //ログイン画面にリダイレクト
 	            if(name == null){
-	                ((HttpServletResponse)response).sendRedirect(context_path + "/login");
+	                ((HttpServletResponse)response).sendRedirect(context_path + "/quizes/login");
 	                return;
 	            }
 

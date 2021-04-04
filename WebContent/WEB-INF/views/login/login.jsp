@@ -13,7 +13,7 @@
               </div>
          </c:if>
          <h2>ログイン</h2>
-         <form method="POST" action="<c:url value='/login' />">
+         <form method="POST" action="<c:url value='/quizes/login' />">
          <label for="name">ユーザーネーム</label><br />
          <input type="text" name="name" value="${name}" />
          <br /><br />

@@ -10,6 +10,6 @@
             <br /><br />
 
 
-            <p><a href="<c:url value='/login' />">管理者の方はこちら</a></p>
+            <p><a href="<c:url value='/quizes/login' />">管理者の方はこちら</a></p>
      </c:param>
 </c:import>

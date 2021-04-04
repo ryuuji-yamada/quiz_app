@@ -1,4 +1,4 @@
-package controllers.login;
+package controllers.quizes;
 
 import java.io.IOException;
 
@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class LogoutServlet
  */
-@WebServlet("/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/quizes/logout")
+public class QuizesLogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LogoutServlet() {
+    public QuizesLogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +31,7 @@ public class LogoutServlet extends HttpServlet {
 	    request.getSession().removeAttribute("password");
 
 	    request.getSession().setAttribute("flush", "ログアウトしました");
-	    response.sendRedirect(request.getContextPath() + "/login");
+	    response.sendRedirect(request.getContextPath() + "/quizes/login");
 
 	}
 
