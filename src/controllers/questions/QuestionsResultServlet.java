@@ -28,6 +28,7 @@ public class QuestionsResultServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 	    String user_answer = request.getParameter("user_answer");
         String questions_answer = request.getParameter("questions_answer");
 

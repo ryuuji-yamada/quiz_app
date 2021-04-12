@@ -2,13 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
-      <c:choose>
-        <c:when test="${questions.id == null}">
-            <c:redirect url='/questions' />
-        </c:when>
-        <c:otherwise>
-        <h2>Q：<c:out value="${questions.quiz}" /></h2>
+    <c:forEach var="question" items="${questions}" varStatus="status">
+        <h2>Q：<c:out value="${question.quiz}" /></h2>
         <br /><br />
+
 
       <form method="POST" action="<c:url value='questions/result' />">
         <label for="user_answer">答え</label><br />
@@ -16,12 +13,12 @@
         <br /><br />
 
 
-        <input type="hidden" name="_token" value="${_token}" />
-        <input type="hidden" name="questions_answer" value="${questions.answer}" />
+        <input type="hidden" name="questions_answer" value="${question.answer}" />
         <button type="submit">解答</button>
       </form>
+      </c:forEach>
       <p>（答えは全て全角で入力してください）</p>
-      </c:otherwise>
-      </c:choose>
+
+
     </c:param>
 </c:import>

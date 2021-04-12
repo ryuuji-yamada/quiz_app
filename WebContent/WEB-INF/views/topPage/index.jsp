@@ -7,9 +7,5 @@
 
 
             <p><a href="<c:url value='/questions' />">クイズに挑戦する</a></p>
-            <br /><br />
-
-
-            <p><a href="<c:url value='/quizes/login' />">管理者の方はこちら</a></p>
      </c:param>
 </c:import>

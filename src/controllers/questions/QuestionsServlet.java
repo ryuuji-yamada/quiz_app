@@ -1,6 +1,7 @@
 package controllers.questions;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -32,20 +33,26 @@ public class QuestionsServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    EntityManager em = DBUtil.createEntityManager();
-
-	    long quizes_count = (long)em.createNamedQuery("getQuizesCount",Long.class)
-                .getSingleResult();
-
-	    Quiz q = em.find(Quiz.class, (int)(Math.random()*quizes_count));
-
-	    em.close();
-	    request.setAttribute("questions", q);
 
 
-	    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/questions.jsp");
-	    rd.forward(request, response);
+	    //DB開く
+        EntityManager em = DBUtil.createEntityManager();
 
+
+        //ランダムに５問取得
+        List<Quiz> q =em.createNamedQuery("getQuizesRandom",Quiz.class).getResultList();
+
+        //DB閉じる
+        em.close();
+
+
+        //idに沿ったクイズを設定
+        request.getSession().setAttribute("questions", q);
+
+
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/questions.jsp");
+        rd.forward(request, response);
 	}
 
 }

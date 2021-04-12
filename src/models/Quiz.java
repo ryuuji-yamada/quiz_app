@@ -5,12 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 
 @Table(name = "quizes")
+@NamedNativeQuery(
+            name ="getQuizesRandom",
+            query ="select*from quizes order by rand() limit 5 ",
+            resultClass=Quiz.class
+)
 @NamedQueries({
     @NamedQuery(
             name = "getAllQuizes",

@@ -21,5 +21,6 @@
                </div>
              </c:otherwise>
          </c:choose>
+         <a href="<c:url value='/questions' />">再びクイズに挑戦する</a>
     </c:param>
 </c:import>

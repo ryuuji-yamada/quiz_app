@@ -11,14 +11,19 @@
     <body>
         <div id="wrapper">
              <div id="header">
-                  <h1>クイズアプリケーション</h1>
+                <div id="header_menu">
+                   <h1><a href="<c:url value='/' />">クイズアプリケーション</a></h1>
+                </div>
+                     <div id="login">
+                         <p><a href="<c:url value='/quizes/login' />">管理者の方はこちら</a></p>
+                     </div>
              </div>
+        </div>
              <div id="content">
                   ${param.content}
              </div>
              <div id="footer">
                   by Local User
              </div>
-        </div>
     </body>
 </html>

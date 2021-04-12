@@ -120,8 +120,16 @@ select{
     display: inline-block;
 }
 
-#employee_name {
+#user {
     color: #cccccc;
+    width: 36%;
+    padding-right: 3%;
+    text-align: right;
+    display: inline-block;
+}
+
+#login {
+	color: #cccccc;
     width: 36%;
     padding-right: 3%;
     text-align: right;

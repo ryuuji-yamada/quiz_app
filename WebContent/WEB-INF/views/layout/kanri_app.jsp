@@ -11,7 +11,9 @@
     <body>
         <div id="wrapper">
              <div id="header">
-                  <h1>クイズアプリケーション</h1>&nbsp;&nbsp;&nbsp;&nbsp;
+               <div id="header_menu">
+                  <h1><a href="<c:url value='/quizes/index' />">クイズアプリケーション</a></h1>
+               </div>
                   <c:if test="${sessionScope.name != null && sessionScope.password != null}">
                        <div id="user">
                            <a href="<c:url value='/quizes/logout' />">ログアウト</a>
