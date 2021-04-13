@@ -15,16 +15,16 @@ import models.Quiz;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class QuestionsServlet
+ * Servlet implementation class Questions_5Servlet
  */
-@WebServlet("/questions")
-public class QuestionsServlet extends HttpServlet {
+@WebServlet("/5questions")
+public class Questions_5Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QuestionsServlet() {
+    public Questions_5Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,9 +33,7 @@ public class QuestionsServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-	    //DB開く
+	  //DB開く
         EntityManager em = DBUtil.createEntityManager();
 
 
@@ -46,12 +44,12 @@ public class QuestionsServlet extends HttpServlet {
         em.close();
 
 
-        //クイズを１問設定
-        request.getSession().setAttribute("questions", q.get(0));
+        //クイズを５問設定
+        request.getSession().setAttribute("questions", q);
 
 
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/questions.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/5questions.jsp");
         rd.forward(request, response);
 	}
 

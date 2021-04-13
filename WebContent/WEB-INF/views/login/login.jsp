@@ -12,7 +12,7 @@
                    <c:out value="${flush}" />
               </div>
          </c:if>
-         <h2>ログイン</h2>
+         <h2>管理者ログイン</h2>
          <form method="POST" action="<c:url value='/quizes/login' />">
          <label for="name">ユーザーネーム</label><br />
          <input type="text" name="name" value="${name}" />

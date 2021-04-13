@@ -41,14 +41,14 @@ public class LoginFilter implements Filter {
 	    String servlet_path = ((HttpServletRequest)request).getServletPath();
 
 
-	    if(!servlet_path.matches("/css.*")){
+	    if(!servlet_path.matches("/css.*") && !servlet_path.matches("/js.*")){
 	        HttpSession session = ((HttpServletRequest)request).getSession();
 
 
 	        String name = (String)session.getAttribute("name");
 
 
-	        if(!servlet_path.equals("/index.html") && !servlet_path.equals("/questions") && !servlet_path.equals("/questions/result") && !servlet_path.equals("/quizes/login")){
+	        if(!servlet_path.equals("/index.html") && !servlet_path.equals("/questions") && !servlet_path.equals("/5questions") && !servlet_path.equals("/questions/result") && !servlet_path.equals("/quizes/login")){
 	            //ログアウト状態であれば
 	            //ログイン画面にリダイレクト
 	            if(name == null){

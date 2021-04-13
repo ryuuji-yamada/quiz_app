@@ -9,13 +9,14 @@
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
     <body>
+    <script src="${pageContext.request.contextPath}/js/quiz.js"></script>
         <div id="wrapper">
              <div id="header">
                 <div id="header_menu">
                    <h1><a href="<c:url value='/' />">クイズアプリケーション</a></h1>
                 </div>
                      <div id="login">
-                         <p><a href="<c:url value='/quizes/login' />">管理者の方はこちら</a></p>
+                         <a href="<c:url value='/quizes/login' />">管理者の方はこちら</a>
                      </div>
              </div>
         </div>

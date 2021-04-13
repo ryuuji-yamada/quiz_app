@@ -2,7 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
-        <h2>Q：<c:out value="${questions.quiz}" /></h2>
+      <c:forEach var="question" items="${questions}" varStatus="status">
+        <h2>Q：<c:out value="${question.quiz}" /></h2>
         <br /><br />
 
 
@@ -12,9 +13,10 @@
         <br /><br />
 
 
-        <input type="hidden" name="questions_answer" value="${questions.answer}" />
+        <input type="hidden" name="questions_answer" value="${question.answer}" />
         <button type="submit">解答</button>
       </form>
+      </c:forEach>
       （答えは全て全角で入力してください)
 
     </c:param>

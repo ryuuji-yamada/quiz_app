@@ -26,7 +26,50 @@ h1{
 
 h2{
 	font-size: 36px;
-	margin-bottom: 15px;
+}
+
+h2#top_decho{
+	text-align: center;
+	font-size: 36px;
+	 padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+
+.question_option {
+  cursor:pointer;
+  cursor:hand;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #4ec4d3;/*左線*/
+  color: #4ec4d3;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.question_option:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+#option{display:none;}
+
+#option_li{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  border-bottom: solid 3px #4ec4d3;
+  border-left: solid 3px #4ec4d3;
+  color: #4ec4d3;
+  transition: .4s;
+}
+
+#option_li:hover{
+	padding-left: 0.7em;
+    padding-right: 0.3em;
 }
 
 li {
@@ -35,8 +78,29 @@ li {
 }
 
 p {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0;
+  text-decoration: none;
+  color: #4ec4d3;
+}
+
+p:before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top:100%;
+  left: 0;
+  border-radius: 3px;
+  background:#4ec4d3;
+  transition: .2s;
+}
+
+p:hover:before{
+  top: -webkit-calc(100% - 3px);
+  top: calc(100% - 3px);
 }
 
 a {
@@ -64,9 +128,20 @@ td {
 }
 
 button {
-    font-size: 14px;
-    padding: 5px 10px;
+  cursor:pointer;
+  cursor:hand;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 30px;
+  font-size: 19px;
+  height: 40px;
+  line-height: 40px!;
+  background: #51587b;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
 }
+
 
 #footer {
     text-align: center;
@@ -144,26 +219,6 @@ h1 a {
     color: #eeeeee;
 }
 
-table#report_list th {
-    font-weight: bold;
-    padding: 10px 2%;
-}
-
-table#report_list .report_name {
-    width: 20%;
-    padding: 10px 2%;
-}
-table#report_list .report_date {
-    width: 20%;
-}
-
-table#report_list .report_title {
-    width: 37%;
-}
-
-table#report_list .report_action {
-    width: 13%;
-}
 
 pre {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
