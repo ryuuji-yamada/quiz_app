@@ -1,6 +1,7 @@
 /**
  *
  */
+var quizIndex = 0;
 function showHide(id){
                 if(!document.getElementById) return;
                 let obj = document.getElementById(id);

@@ -30,8 +30,7 @@
                       <h2>お探しのクイズは見つかりませんでした</h2>
                  </c:otherwise>
            </c:choose>
-
-
+           <br /><br />
            <p><a href="<c:url value='/quizes/index' />">一覧に戻る</a></p>
       </c:param>
 </c:import>

@@ -33,6 +33,7 @@ public class Questions_5Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 	  //DB開く
         EntityManager em = DBUtil.createEntityManager();
 
@@ -46,6 +47,7 @@ public class Questions_5Servlet extends HttpServlet {
 
         //クイズを５問設定
         request.getSession().setAttribute("questions", q);
+
 
 
 

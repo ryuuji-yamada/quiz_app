@@ -24,6 +24,17 @@ public class QuestionsResultServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+       String error = "error";
+       request.setAttribute("error", error);
+
+       RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/questions/result.jsp");
+       rd.forward(request, response);
+   }
+
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

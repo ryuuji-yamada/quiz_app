@@ -4,7 +4,7 @@
     <c:param name="content">
          <c:if test="${hasError}">
              <div id="flush_error">
-                 ユーザーネームかパスワードが間違っています。
+                 管理者ネームかパスワードが間違っています。
              </div>
          </c:if>
          <c:if test="${flush != null}">
@@ -14,7 +14,7 @@
          </c:if>
          <h2>管理者ログイン</h2>
          <form method="POST" action="<c:url value='/quizes/login' />">
-         <label for="name">ユーザーネーム</label><br />
+         <label for="name">管理者ネーム</label><br />
          <input type="text" name="name" value="${name}" />
          <br /><br />
 
